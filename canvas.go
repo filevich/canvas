@@ -1,5 +1,7 @@
 package canvas
 
+import "strings"
+
 // Canvas .
 type Canvas [][]rune
 
@@ -7,6 +9,16 @@ const (
 	width  = 54
 	height = 13
 )
+
+// Raw .
+func Raw(obj string) string {
+	return strings.Trim(obj, "\n ")
+}
+
+// Replace .
+func Replace(this, that, here string) string {
+	return strings.Replace(here, this, that, 1)
+}
 
 // Render .
 func (canvas Canvas) Render() string {
