@@ -1,13 +1,16 @@
 package canvas
 
-import "strings"
+import (
+	"strconv"
+	"strings"
+)
 
 // Canvas .
 type Canvas [][]rune
 
 const (
 	width  = 54
-	height = 13
+	height = 19
 )
 
 // Raw .
@@ -18,6 +21,12 @@ func Raw(obj string) string {
 // Replace .
 func Replace(this, that, here string) string {
 	return strings.Replace(here, this, that, 1)
+}
+
+// Debug .
+func (canvas Canvas) Debug(p Point) (rune, string) {
+	var c rune = canvas[p.X][p.Y]
+	return c, strconv.QuoteRune(c)
 }
 
 // Render .
