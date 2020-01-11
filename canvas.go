@@ -9,7 +9,7 @@ import (
 type Canvas [][]rune
 
 const (
-	width  = 54
+	width  = 75
 	height = 19
 )
 
